@@ -17,7 +17,7 @@ template <typename... Shapes>
 const double findGreatestSurfaceArea(Shapes&&... shapes)
 {   
     static_assert(std::conjunction_v<std::is_base_of<ShapeManager, Common::Details::remove_cvref_t<Shapes>>...>, "Class doesn't inherit from ShapeManager!");
-    const auto maxSurfaceArea = std::max({shapes.calcArea()...});
+    const auto maxSurfaceArea = std::max({(std::forward<Shapes>(shapes).calcArea())...});
     std::cout << "Max surface area is: " << maxSurfaceArea << "\n";
     return maxSurfaceArea;
 }
