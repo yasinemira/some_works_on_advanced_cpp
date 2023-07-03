@@ -2,9 +2,11 @@
 #include <memory>
 #include <string>
 
-#include "src/shapes/Rectangle.h"
-#include "src/shapes/Triangle.h"
-#include "src/common/calculations.h"
+#include "Rectangle.h"
+#include "Triangle.h"
+
+
+#include "calculations.h"
 
 int main()
 {
